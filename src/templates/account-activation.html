@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activate Your Account</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f0ede6;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        padding: 40px 16px;
+      }
+
+      .wrapper {
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      /* Header bar */
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 32px;
+      }
+
+      .logo {
+        font-family: 'DM Serif Display', serif;
+        font-size: 22px;
+        color: #1a1814;
+        letter-spacing: -0.5px;
+      }
+
+      .logo span {
+        color: #c9521a;
+      }
+
+      .date-tag {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #9e9a93;
+      }
+
+      /* Main card */
+      .card {
+        background: #fdfcf9;
+        border-radius: 2px;
+        overflow: hidden;
+        border: 1px solid #e2ddd5;
+      }
+
+      /* Hero strip */
+      .hero {
+        background: #1a1814;
+        padding: 56px 48px 48px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -40px;
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 82, 26, 0.2);
+      }
+
+      .hero::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 82, 26, 0.12);
+      }
+
+      .hero-label {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #c9521a;
+        border: 1px solid rgba(201, 82, 26, 0.4);
+        padding: 4px 10px;
+        border-radius: 2px;
+        margin-bottom: 24px;
+      }
+
+      .hero h1 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 38px;
+        line-height: 1.1;
+        color: #fdfcf9;
+        letter-spacing: -0.5px;
+        max-width: 320px;
+      }
+
+      .hero h1 em {
+        font-style: italic;
+        color: #c9521a;
+      }
+
+      /* Body section */
+      .body {
+        padding: 48px 48px 40px;
+        border-bottom: 1px solid #e2ddd5;
+      }
+
+      .greeting {
+        font-size: 15px;
+        color: #5a5650;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
+
+      .greeting strong {
+        color: #1a1814;
+        font-weight: 500;
+      }
+
+      .message {
+        font-size: 15px;
+        color: #5a5650;
+        line-height: 1.7;
+        margin-bottom: 36px;
+      }
+
+      /* CTA button */
+      .cta-wrap {
+        margin-bottom: 36px;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background: #c9521a;
+        color: #fdfcf9;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 16px 36px;
+        border-radius: 2px;
+      }
+
+      /* Expiry notice */
+      .expiry {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        background: #f5f2ec;
+        border-left: 3px solid #c9521a;
+        padding: 14px 16px;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .expiry-icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        margin-top: 1px;
+        opacity: 0.7;
+      }
+
+      .expiry p {
+        font-size: 12px;
+        color: #7a766f;
+        line-height: 1.6;
+      }
+
+      .expiry p strong {
+        color: #1a1814;
+        font-weight: 500;
+      }
+
+      /* Divider row */
+      .divider {
+        padding: 28px 48px;
+        border-bottom: 1px solid #e2ddd5;
+      }
+
+      .alt-link-label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #9e9a93;
+        margin-bottom: 10px;
+      }
+
+      .alt-link-box {
+        background: #f5f2ec;
+        border: 1px solid #e2ddd5;
+        border-radius: 2px;
+        padding: 12px 14px;
+        font-size: 12px;
+        color: #7a766f;
+        word-break: break-all;
+        line-height: 1.6;
+        font-family: 'Courier New', monospace;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 24px 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .footer-left p {
+        font-size: 11px;
+        color: #b0aaa2;
+        line-height: 1.7;
+      }
+
+      .footer-left a {
+        color: #7a766f;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .footer-right {
+        font-size: 11px;
+        color: #b0aaa2;
+        text-align: right;
+      }
+
+      /* Bottom strip */
+      .bottom-strip {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .bottom-strip p {
+        font-size: 11px;
+        color: #b0aaa2;
+      }
+
+      .bottom-strip a {
+        font-size: 11px;
+        color: #7a766f;
+        text-decoration: none;
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          padding: 40px 28px 36px;
+        }
+        .hero h1 {
+          font-size: 30px;
+        }
+        .body {
+          padding: 36px 28px 32px;
+        }
+        .divider {
+          padding: 24px 28px;
+        }
+        .footer {
+          padding: 20px 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <div class="logo">event<span>ria</span></div>
+        <div class="date-tag">Account Activation</div>
+      </div>
+
+      <div class="card">
+        <!-- Hero -->
+        <div class="hero">
+          <div class="hero-label">Action required</div>
+          <h1>Activation your <em>new account</em></h1>
+        </div>
+
+        <!-- Body -->
+        <div class="body">
+          <p class="greeting">Hello, <strong>{{fullName}}</strong> —</p>
+          <p class="message">
+            Thank you for signing up. To complete your registration and start
+            using your account, please verify your email address by clicking the
+            button below.
+          </p>
+
+          <div class="cta-wrap">
+            <a href="{{activationUrl}}" class="cta-btn">Activate my account</a>
+          </div>
+
+          <div class="expiry">
+            <svg
+              class="expiry-icon"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="8"
+                cy="8"
+                r="6.5"
+                stroke="#C9521A"
+                stroke-width="1.2"
+              />
+              <path
+                d="M8 5v3.5l2 1.5"
+                stroke="#C9521A"
+                stroke-width="1.2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <p>
+              This link is valid for <strong>24 hours</strong> and can only be
+              used once. If it expires, you can request a new activation link
+              from the login page.
+            </p>
+          </div>
+        </div>
+
+        <!-- Fallback link -->
+        <div class="divider">
+          <p class="alt-link-label">Button not working? Copy this link</p>
+          <div class="alt-link-box">{{activationUrl}}</div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          <div class="footer-left">
+            <p>
+              Didn't create an account?
+              <a href="mailto:support@ticketly.com">Contact support</a>
+            </p>
+            <p>
+              You received this because someone registered using this email
+              address.
+            </p>
+          </div>
+          <div class="footer-right">
+            <p>© 2026 Ticketly</p>
+            <p>All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom strip -->
+      <div class="bottom-strip">
+        <p>Ticketly Inc. · Jakarta, Indonesia</p>
+        <a href="{{unsubscribeUrl}}">Unsubscribe</a>
+      </div>
+    </div>
+  </body>
+</html>
